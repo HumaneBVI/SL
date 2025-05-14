@@ -7,25 +7,24 @@
     body {
       margin: 0;
       padding: 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      white-space: nowrap;
+      overflow: hidden;
     }
     #shelterluv_wrap_1736349419 {
       display: flex;
-      flex-wrap: nowrap;
       gap: 15px;
-      scroll-behavior: smooth;
       overflow-x: auto;
       overflow-y: hidden;
+      scroll-behavior: smooth;
+      white-space: nowrap;
+      max-height: 180px;
     }
     .shelterluv-pet-list {
-      display: flex !important;
+      display: inline-flex !important;
       flex-wrap: nowrap !important;
       gap: 15px;
     }
     .shelterluv-pet {
-      flex: 0 0 140px !important;
+      flex: 0 0 150px !important;
       height: auto !important;
     }
     .shelterluv-pet img {
@@ -35,14 +34,14 @@
     }
 
     /* Scrollbar Styling */
-    body::-webkit-scrollbar {
+    #shelterluv_wrap_1736349419::-webkit-scrollbar {
       height: 8px;
     }
-    body::-webkit-scrollbar-thumb {
+    #shelterluv_wrap_1736349419::-webkit-scrollbar-thumb {
       background: #888;
       border-radius: 4px;
     }
-    body::-webkit-scrollbar-thumb:hover {
+    #shelterluv_wrap_1736349419::-webkit-scrollbar-thumb:hover {
       background: #555;
     }
   </style>
@@ -64,12 +63,12 @@
     const observer = new MutationObserver(() => {
       const petList = document.querySelector('.shelterluv-pet-list');
       if (petList) {
-        petList.style.display = 'flex';
+        petList.style.display = 'inline-flex';
         petList.style.flexWrap = 'nowrap';
         petList.style.overflowX = 'auto';
         petList.style.overflowY = 'hidden';
         petList.querySelectorAll('.shelterluv-pet').forEach((pet) => {
-          pet.style.flex = '0 0 140px';
+          pet.style.flex = '0 0 150px';
         });
         observer.disconnect();
       }
