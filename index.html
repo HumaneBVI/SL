@@ -7,24 +7,25 @@
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
-    }
-    #shelterluv_wrap_1736349419 {
-      display: flex;
-      gap: 15px;
       overflow-x: auto;
       overflow-y: hidden;
-      scroll-behavior: smooth;
       white-space: nowrap;
-      max-height: 180px;
+    }
+    #shelterluv_wrap_1736349419 {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      scroll-behavior: smooth;
+      overflow-x: auto;
+      overflow-y: hidden;
     }
     .shelterluv-pet-list {
       display: inline-flex !important;
       flex-wrap: nowrap !important;
-      gap: 15px;
+      gap: 10px;
     }
     .shelterluv-pet {
-      flex: 0 0 150px !important;
+      flex: 0 0 120px !important;
       height: auto !important;
     }
     .shelterluv-pet img {
@@ -68,7 +69,7 @@
         petList.style.overflowX = 'auto';
         petList.style.overflowY = 'hidden';
         petList.querySelectorAll('.shelterluv-pet').forEach((pet) => {
-          pet.style.flex = '0 0 150px';
+          pet.style.flex = '0 0 120px';
         });
         observer.disconnect();
       }
